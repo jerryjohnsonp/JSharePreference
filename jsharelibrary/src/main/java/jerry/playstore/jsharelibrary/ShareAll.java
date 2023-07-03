@@ -23,13 +23,17 @@ public class ShareAll
 
     public String readSharedPreference(Context context, String key)
     {
-        SharedPreferences sharedPreferences =  context.getSharedPreferences(mypreference, Context.MODE_PRIVATE);
-        return sharedPreferences.getString(key,"").toString();
+        if(checkIfExists(context, key) == true) {
+            SharedPreferences sharedPreferences = context.getSharedPreferences(mypreference, Context.MODE_PRIVATE);
+            return sharedPreferences.getString(key, "").toString();
+        }
+        else {
+            return "-NA-";
+        }
     }
 
     public void writeSharedPreference(Context context,String key,String data)
     {
-
         SharedPreferences sharedPreferences = context.getSharedPreferences(mypreference, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(key,data);
