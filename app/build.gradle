@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "jerry.playstore.jsharepreference"
-        minSdk 23
+        minSdk 21
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -42,5 +42,5 @@ dependencies {
     implementation project(':alertlibrary')
     implementation project(':autonote')
 
-
+    implementation "androidx.work:work-runtime:2.7.1"
 }
