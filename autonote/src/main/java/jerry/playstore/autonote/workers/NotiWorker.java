@@ -24,12 +24,14 @@ public class NotiWorker extends Worker {
     byte[] logoByteArray;
     int[] imageArray;
     String[] stringArray;
+    String msgIfPictureSelected;
     public NotiWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         this.context = context;
         this.stringArray = getInputData().getStringArray("stringArray");
         this.imageArray = getInputData().getIntArray("imageArray");
         this.logoByteArray = getInputData().getByteArray("logo");
+        this.msgIfPictureSelected = getInputData().getString("msgIfPictureSelected");
     }
 
     private static final String TAG = NotiWorker.class.getName();
@@ -92,7 +94,7 @@ public class NotiWorker extends Worker {
                 // Use the random number
                 // int randomElement = imageArray[randomNumber];
 
-                new Utils().sendPicNotification(context,imageArray[randomNumber],convertByteArrayToBitmap(logoByteArray));
+                new Utils().sendPicNotification(context,msgIfPictureSelected,imageArray[randomNumber],convertByteArrayToBitmap(logoByteArray));
                 return Result.success();
 
             }

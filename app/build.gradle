@@ -39,8 +39,8 @@ dependencies {
 
 
     implementation project(':jsharelibrary')
-
     implementation project(':alertlibrary')
+    implementation project(':autonote')
 
 
 }

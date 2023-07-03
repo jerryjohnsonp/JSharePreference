@@ -30,7 +30,7 @@ public class ShedulerClass {
 //            imageList.add(R.drawable.third);
 
     WorkManager workManager;
-    public void scheduleJob(Context context, int interval, TimeUnit  timeUnit, List<String> stringList, ArrayList<Integer> imageList, int logo) {
+    public void scheduleJob(Context context, int interval, TimeUnit  timeUnit, List<String> stringList, ArrayList<Integer> imageList, int logo,String msgIfPictureSelected) {
 
         try{
 
@@ -59,6 +59,7 @@ public class ShedulerClass {
                     .putStringArray("stringList",stringArray)
                     .putIntArray("imageList", imageArray)
                     .putByteArray("logo",logoByteArray)
+                    .putString("msgIfPictureSelected",msgIfPictureSelected)
                     .build();
 
             workManager = WorkManager.getInstance();
