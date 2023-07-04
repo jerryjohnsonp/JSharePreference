@@ -15,5 +15,5 @@ dependencyResolutionManagement {
 rootProject.name = "JSharePreference"
 include ':app'
 include ':jsharelibrary'
-//include ':alertlibrary'
+include ':alertlibrary'
 //include ':autonote'

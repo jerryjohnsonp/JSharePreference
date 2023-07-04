@@ -39,7 +39,7 @@ dependencies {
 
 
     implementation project(':jsharelibrary')
-//    implementation project(':alertlibrary')
+    implementation project(':alertlibrary')
 //    implementation project(':autonote')
 
     implementation "androidx.work:work-runtime:2.7.1"
